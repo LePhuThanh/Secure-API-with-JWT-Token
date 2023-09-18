@@ -1,4 +1,4 @@
-package com.phuthanh.SpringSecurity_JWT_Token.request;
+package com.phuthanh.SpringSecurity_JWT_Token.payloads.requests;
 
 
 import lombok.AllArgsConstructor;

@@ -1,6 +1,6 @@
-package com.phuthanh.SpringSecurity_JWT_Token.repository;
+package com.phuthanh.SpringSecurity_JWT_Token.repositories;
 
-import com.phuthanh.SpringSecurity_JWT_Token.entity.User;
+import com.phuthanh.SpringSecurity_JWT_Token.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,9 +1,9 @@
-package com.phuthanh.SpringSecurity_JWT_Token.controller;
+package com.phuthanh.SpringSecurity_JWT_Token.controllers;
 
-import com.phuthanh.SpringSecurity_JWT_Token.entity.AuthenticationResponse;
-import com.phuthanh.SpringSecurity_JWT_Token.request.AuthenticationRequest;
-import com.phuthanh.SpringSecurity_JWT_Token.request.RegisterRequest;
-import com.phuthanh.SpringSecurity_JWT_Token.service.AuthenticationService;
+import com.phuthanh.SpringSecurity_JWT_Token.entities.AuthenticationResponse;
+import com.phuthanh.SpringSecurity_JWT_Token.payloads.requests.AuthenticationRequest;
+import com.phuthanh.SpringSecurity_JWT_Token.payloads.requests.RegisterRequest;
+import com.phuthanh.SpringSecurity_JWT_Token.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AuthenticationController {
     private final AuthenticationService service;
+
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request ){
         return ResponseEntity.ok(service.register(request));
     }
+
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody AuthenticationRequest request){

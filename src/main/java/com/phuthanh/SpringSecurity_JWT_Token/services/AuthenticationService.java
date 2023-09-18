@@ -1,12 +1,12 @@
-package com.phuthanh.SpringSecurity_JWT_Token.service;
+package com.phuthanh.SpringSecurity_JWT_Token.services;
 
 import com.phuthanh.SpringSecurity_JWT_Token.config.jwt.JwtService;
-import com.phuthanh.SpringSecurity_JWT_Token.entity.Role;
-import com.phuthanh.SpringSecurity_JWT_Token.entity.User;
-import com.phuthanh.SpringSecurity_JWT_Token.entity.AuthenticationResponse;
-import com.phuthanh.SpringSecurity_JWT_Token.repository.UserRepository;
-import com.phuthanh.SpringSecurity_JWT_Token.request.AuthenticationRequest;
-import com.phuthanh.SpringSecurity_JWT_Token.request.RegisterRequest;
+import com.phuthanh.SpringSecurity_JWT_Token.entities.Role;
+import com.phuthanh.SpringSecurity_JWT_Token.entities.User;
+import com.phuthanh.SpringSecurity_JWT_Token.entities.AuthenticationResponse;
+import com.phuthanh.SpringSecurity_JWT_Token.repositories.UserRepository;
+import com.phuthanh.SpringSecurity_JWT_Token.payloads.requests.AuthenticationRequest;
+import com.phuthanh.SpringSecurity_JWT_Token.payloads.requests.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

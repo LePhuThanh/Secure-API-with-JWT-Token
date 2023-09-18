@@ -1,4 +1,4 @@
-package com.phuthanh.SpringSecurity_JWT_Token.entity;
+package com.phuthanh.SpringSecurity_JWT_Token.entities;
 
 import lombok.*;
 

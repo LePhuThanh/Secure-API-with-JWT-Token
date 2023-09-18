@@ -1,6 +1,6 @@
 package com.phuthanh.SpringSecurity_JWT_Token.config;
 
-import com.phuthanh.SpringSecurity_JWT_Token.repository.UserRepository;
+import com.phuthanh.SpringSecurity_JWT_Token.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
