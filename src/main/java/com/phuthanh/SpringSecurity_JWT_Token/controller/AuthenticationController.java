@@ -1,6 +1,6 @@
 package com.phuthanh.SpringSecurity_JWT_Token.controller;
 
-import com.phuthanh.SpringSecurity_JWT_Token.entity.auth.AuthenticationResponse;
+import com.phuthanh.SpringSecurity_JWT_Token.entity.AuthenticationResponse;
 import com.phuthanh.SpringSecurity_JWT_Token.request.AuthenticationRequest;
 import com.phuthanh.SpringSecurity_JWT_Token.request.RegisterRequest;
 import com.phuthanh.SpringSecurity_JWT_Token.service.AuthenticationService;

@@ -1,11 +1,10 @@
-package com.phuthanh.SpringSecurity_JWT_Token.config;
+package com.phuthanh.SpringSecurity_JWT_Token.config.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +37,7 @@ public class JwtService {
                 .parserBuilder()
                 .setSigningKey(getSignInkey())
                 .build()
-                .parseClaimsJwt(token)
+                .parseClaimsJws(token)
                 .getBody();
 
     }

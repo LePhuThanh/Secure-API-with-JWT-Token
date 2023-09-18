@@ -1,4 +1,4 @@
-package com.phuthanh.SpringSecurity_JWT_Token.config;
+package com.phuthanh.SpringSecurity_JWT_Token.config.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,9 +1,9 @@
 package com.phuthanh.SpringSecurity_JWT_Token.service;
 
-import com.phuthanh.SpringSecurity_JWT_Token.config.JwtService;
+import com.phuthanh.SpringSecurity_JWT_Token.config.jwt.JwtService;
 import com.phuthanh.SpringSecurity_JWT_Token.entity.Role;
 import com.phuthanh.SpringSecurity_JWT_Token.entity.User;
-import com.phuthanh.SpringSecurity_JWT_Token.entity.auth.AuthenticationResponse;
+import com.phuthanh.SpringSecurity_JWT_Token.entity.AuthenticationResponse;
 import com.phuthanh.SpringSecurity_JWT_Token.repository.UserRepository;
 import com.phuthanh.SpringSecurity_JWT_Token.request.AuthenticationRequest;
 import com.phuthanh.SpringSecurity_JWT_Token.request.RegisterRequest;
@@ -21,6 +21,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     public AuthenticationResponse register(RegisterRequest request) {
+        //Create new user
         var user = User.builder()
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
@@ -29,20 +30,24 @@ public class AuthenticationService {
                 .role(Role.USER)
                 .build();
         userRepository.save(user);
+        //Generate JWT for new user registered successfully
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
     }
     public AuthenticationResponse authenticate(AuthenticationRequest request){
+        //authenticate
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
                         request.getPassword()
                 )
         );
+        //find information of user in DB
         var user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow();
+                .orElseThrow(); // if it doesn't find => throw exception
+        //If authenticate successfully => Create JWT for this user
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
